@@ -5,7 +5,7 @@ export const apiTravel = axios.create({
 });
 
 apiTravel.defaults.headers.common["x-rapidapi-key"] =
-'process.env.REACT_APP_TRAVEL_API_KEY';
+'9818177461msh4da05e30234fec8p181250jsn9bea6be85df9';
 apiTravel.defaults.headers.common["x-rapidapi-host"] =
   "travel-advisor.p.rapidapi.com";
 

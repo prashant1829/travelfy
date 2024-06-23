@@ -1,26 +1,23 @@
-// src/api/weatherAPI.js
 import axios from "axios";
 
-const baseURL = "https://api.openweathermap.org/data/3.0/onecall"; // Version 3.0 API endpoint
-const apiKey = process.env.REACT_APP_OPEN_WEATHER_API;
+const openWeatherAPI = '720b2c841284da9af2eba75581838bed';
+const baseURL = "https://api.openweathermap.org/data/3.0/onecall?";
 
-export const getWeatherForecast = async (lat, lon) => {
+export const getWeather = async (lat, lng) => {
   try {
-    const response = await axios.get(baseURL, {
+    const { data } = await axios.get(baseURL, {
       params: {
         lat,
-        lon,
-        exclude: "current,minutely,hourly,alerts", // Exclude unnecessary data
-        units: "metric", // Units for temperature (metric for Celsius)
-      },
-      headers: {
-        "x-api-key": apiKey, // API key header for version 3.0
+        lon: lng,
+        exclude: "current,hourly,minutely,alerts",
+        units: "metric",
+        appid: openWeatherAPI,
       },
     });
-    return response.data;
+    return data;
   } catch (error) {
-    console.error("Error fetching weather data:", error);
-    throw error; // Throw the error further so it can be handled
+    return error;
   }
 };
+
 

@@ -1,16 +1,106 @@
-.user-loc-grid {
-  margin: 0px !important;
-  border: solid 1px rgb(172, 172, 172);
-  border-radius: 7px;
-  padding-top: 9px;
-  padding-bottom: 10px;
+/* blog.css */
+
+.tour-page {
+  padding: 20px;
+  font-family: Arial, sans-serif;
 }
 
-.user-loc-wrapper{
-    padding-left: 100px !important;
-    padding-right: 2px;
+div p {
+  text-align: justify;
 }
 
-.filters-grid-around{
-    padding-right: 10px !important;
+button {
+  border: none;
+  background-color: #ddd;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, font-size 0.3s;
+}
+
+.grid-container {
+  margin: 20px 30px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 30px;
+}
+
+#title-blog {
+  font-family: monospace;
+  text-align: center;
+  margin: 34px;
+  font-size: 2em;
+  color: #333;
+}
+
+h3 {
+  font-family: cursive;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.grid-item {
+  border-radius: 10px;
+  background-color: #ddd;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.grid-item:hover {
+  transform: translateY(-5px);
+}
+
+.grid-item p {
+  margin-bottom: 20px;
+  font-size: 1em;
+  color: #666;
+}
+
+.grid-container button:hover {
+  font-size: 17px;
+  background-color: #ccc;
+}
+
+.blog-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: justify;
+}
+
+.blog-content h3 {
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+  font-family: cursive;
+}
+
+.blog-content p {
+  font-size: 1.2em;
+  color: #666;
+  line-height: 1.6;
+}
+
+.blog-content button {
+  display: block;
+  margin: 20px auto;
+  background-color: #ddd;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, font-size 0.3s;
+}
+
+.blog-content button:hover {
+  background-color: #ccc;
+  font-size: 17px;
 }
