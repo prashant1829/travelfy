@@ -78,6 +78,7 @@ export default function HomePage({ user, ...props }) {
               justifyContent: "center",
               alignItems: "center",
               width: "100%",
+              
             }}
           >
             <Paper sx={{ width: "40%", p: 1, minWidth: 250 }}>

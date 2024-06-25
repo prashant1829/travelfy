@@ -61,6 +61,7 @@ const Login = (props) => {
       <form onSubmit={handleSubmit}>
         <TextField
           id="outlined-helperText"
+          // style={{width:"43%"}}
           label="Email"
           value={email}
           onChange={handleChange}

@@ -6,3 +6,18 @@
     padding-top: 0px !important;
     padding-bottom: 0px !important;
   }
+
+  .footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center !important;
+  }
+
+  #footer-text{
+    text-align: center;
+  }
+  
+  .footer p {
+    margin: 0;
+  }

@@ -1,22 +1,28 @@
-import axios from "axios";
+import axios from 'axios';
 
-const openWeatherAPI = '720b2c841284da9af2eba75581838bed';
-const baseURL = "https://api.openweathermap.org/data/3.0/onecall?";
+// Replace with your actual API key
+const API_KEY = '9818177461msh4da05e30234fec8p181250jsn9bea6be85df9';
+const BASE_URL = 'https://visual-crossing-weather.p.rapidapi.com/forecast';
 
-export const getWeather = async (lat, lng) => {
+export const getWeather = async (city, aggregateHours = 24) => {
   try {
-    const { data } = await axios.get(baseURL, {
+    const response = await axios.get(BASE_URL, {
       params: {
-        lat,
-        lon: lng,
-        exclude: "current,hourly,minutely,alerts",
-        units: "metric",
-        appid: openWeatherAPI,
+        location: city,
+        unitGroup: 'metric', // or 'us' for Fahrenheit
+        contentType: 'json',
+        shortColumnNames: false,
+        aggregateHours: aggregateHours, // Adding the aggregateHours parameter
+      },
+      headers: {
+        'x-rapidapi-key': API_KEY,
+        'x-rapidapi-host': 'visual-crossing-weather.p.rapidapi.com',
       },
     });
-    return data;
+    return response.data;
   } catch (error) {
-    return error;
+    console.error('Error fetching weather data:', error);
+    throw error;
   }
 };
 

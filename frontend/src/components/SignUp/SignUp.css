@@ -10,3 +10,6 @@
 .signup-button {
     margin: 10px;
 }
+.signup-wrapper input{
+    box-sizing: content-box  !important;
+}

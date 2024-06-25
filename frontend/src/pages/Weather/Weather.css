@@ -1,18 +1,7 @@
-h3{
-  font-size: 33px !important;
-  font-family: monospace;
-  text-align: center;
-  margin: 23px !important;
-}
+.search-weather-container {
+    margin-top: 20px;
+  }
 
-.container-au p{
-  text-align: justify;
-  font-size: 19px !important;
-}
-
-.container-au{
-  margin: 5px 250px;
-}
-h4{
-  text-align: center;
+.search-weather-container input{
+  box-sizing: content-box !important;
 }

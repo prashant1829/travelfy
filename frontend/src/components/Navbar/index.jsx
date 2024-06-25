@@ -24,7 +24,7 @@ const AppBar = styled("header")({
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center',
-  padding: '8px',
+  padding: '1px',
   backgroundColor: '#ffffff',
   color: '#fff',
   boxShadow: '2px 2px 7px rgba(198, 198, 198, 0.666)',
@@ -74,17 +74,18 @@ export default function MiniDrawer({ user, ...props }) {
           <li><Link to="/explore">Explore</Link></li>
           <li><Link to="/aroundme">Blogs</Link></li>
           <li><Link to="/mytrips">My Trips</Link></li>
-          <li><Link to="/weather">About Us</Link></li>
-          <li><Link to="/profile">Contact</Link></li>
+          <li><Link to="/weather">Weather</Link></li>
+          <li><Link to="/aboutus">About Us</Link></li>
+          {/* <li><Link to="/contactus">Contact</Link></li> */}
         </ul>
       </nav>
       <div className="buttons">
         {user ? (
           <>
             <Tooltip title="Open Menu">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}> 
                 <Avatar
-                  alt="Travelfy User"
+                  alt="Itinerary Planner User"
                   src={user.profilePic || defaultPic}
                 />
               </IconButton>
@@ -140,7 +141,7 @@ export default function MiniDrawer({ user, ...props }) {
               variant="contained"
               sx={{ backgroundColor: buttonColor, '&:hover': { backgroundColor: buttonColorHover } }}
             >
-              <AccountCircleRoundedIcon fontSize="small" sx={{mr:1}}/>
+              {/* <AccountCircleRoundedIcon fontSize="small" sx={{mr:1}}/> */}
               Login
             </Button>
             <Button

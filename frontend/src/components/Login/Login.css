@@ -6,4 +6,9 @@
 .login-button {
     margin: 10px;
 }
+.login-wrapper input{
+    box-sizing: content-box  !important;
+}
+
+
 

@@ -12,11 +12,11 @@ import ModeNightIcon from "@mui/icons-material/ModeNight";
 import WbSunnyIcon from "@mui/icons-material/WbSunny";
 import WaterIcon from "@mui/icons-material/Water";
 
-const WeatherCard = ({ day, i }) => {
-  const [dateOfDay, setDateOfDay] = useState(day.date);
+const WeatherCard = ({ day }) => {
+  const [dateOfDay, setDateOfDay] = useState(day.datetime);
 
   const formatDate = () => {
-    const date = new Date(day.dt * 1000);
+    const date = new Date(day.datetime);
     const dayOfWeek = date.toLocaleDateString("en-US", { weekday: "long" });
     const month = date.toLocaleDateString("en-US", { month: "long" });
     const dayOfMonth = date.getDate();
@@ -27,11 +27,11 @@ const WeatherCard = ({ day, i }) => {
 
   useEffect(() => {
     formatDate();
-  }, []);
+  }, [day.datetime]);
 
   return (
     <>
-      <Card sx={{ width: 215, maxWidth: 215, maxHeight: 315, m: 0.5, my:1 }} elevation={3}>
+      <Card sx={{ width: 215, maxWidth: 215, maxHeight: 315, m: 0.5, my: 1 }} elevation={3}>
         <CardContent>
           <Typography gutterBottom variant="subtitle2" component="div">
             {dateOfDay}
@@ -44,18 +44,16 @@ const WeatherCard = ({ day, i }) => {
             }}
             className="weather-icon-box"
           >
-            <CardMedia
+            {/* <CardMedia
               component="img"
               height="60"
-              image={`https://openweathermap.org/img/w/${day.weather[0].icon}.png`}
-              alt="green iguana"
-            />
+              image={`https://www.visualcrossing.com/img/icons/${day.icon}.png`}
+              alt="weather icon"
+            /> */}
           </Box>
           <Divider>
             <Typography variant="caption" gutterBottom>
-              {day.weather.map((weather) => (
-                <Chip label={weather.description} />
-              ))}
+              <Chip label={day.conditions} />
             </Typography>
           </Divider>
           <Box
@@ -66,19 +64,19 @@ const WeatherCard = ({ day, i }) => {
           >
             <Typography variant="subtitle2">
               <ThermostatOutlinedIcon fontSize="small" color="disabled" /> Temp.
-              <Typography variant="caption"> {day.temp.day}ºC</Typography>
+              <Typography variant="caption"> {day.temp}ºC</Typography>
             </Typography>
             <Typography variant="subtitle2">
               <WaterIcon fontSize="small" color="disabled" /> Feels Like:
-              <Typography variant="caption"> {day.feels_like.day}ºC</Typography>
+              <Typography variant="caption"> {day.feelslike}ºC</Typography>
             </Typography>
             <Typography variant="subtitle2">
               <WbSunnyIcon fontSize="small" color="disabled" /> Max Temp:
-              <Typography variant="caption"> {day.temp.max}ºC</Typography>
+              <Typography variant="caption"> {day.tempmax}ºC</Typography>
             </Typography>
             <Typography variant="subtitle2">
               <ModeNightIcon fontSize="small" color="disabled" /> Night Temp.:
-              <Typography variant="caption"> {day.temp.night}ºC</Typography>
+              <Typography variant="caption"> {day.tempmin}ºC</Typography>
             </Typography>
           </Box>
           <Chip

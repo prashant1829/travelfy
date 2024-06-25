@@ -1,3 +1,7 @@
 .search-box-wrapper{
     padding-top: 20px;
 }
+
+.search-box-wrapper input{
+    box-sizing: content-box  !important;
+}

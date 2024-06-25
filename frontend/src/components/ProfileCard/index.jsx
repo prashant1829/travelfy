@@ -12,6 +12,7 @@ import Box from "@mui/material/Box";
 import Avatar from "@mui/material/Avatar";
 import Typography from "@mui/material/Typography";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import "./profilecard.css";
 
 const ProfileCard = ({ user, ...props }) => {
   const [values, setValues] = useState({
@@ -80,7 +81,7 @@ const ProfileCard = ({ user, ...props }) => {
   };
 
   return (
-    <>
+    <div className="profilecard">
       <Box
         sx={{
           maxWidth: 400,
@@ -195,7 +196,7 @@ const ProfileCard = ({ user, ...props }) => {
           </form>
         </Paper>
       </Box>
-    </>
+    </div>
   );
 };
 

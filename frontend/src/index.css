@@ -11,3 +11,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.search-box input{
+  height: 60px !important;
+}
+::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for webkit browsers */
+}
